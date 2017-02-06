@@ -7,6 +7,7 @@
 var x = 40;
 context.beginPath();
 var arr = [];
+
 function getPoint() {
     var numberOfPoints = document.getElementById("countId").value;
     return numberOfPoints;
@@ -57,9 +58,6 @@ function Interval(interval_) {
         $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
     }, interval_)
 }
-//function SendRequest() {
-//    $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
-//};
 
 function SendRequest_Success(result) {
     for (var i = (arr.length - 1) ; ;) {
