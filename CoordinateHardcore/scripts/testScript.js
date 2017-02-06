@@ -3,15 +3,16 @@
     max = 449;
     return +(Math.floor(Math.random() * (max - min)) + min);
 };
-
 var x = 40;
 context.beginPath();
 var arr = [];
+
 function getPoint()
 {
     var numberOfPoints = document.getElementById("countId").value;
     return numberOfPoints;
 }
+
 function drawGraph(numberOfPoints) {
 
     for (var i = 0; i <= numberOfPoints; i++) {
@@ -53,15 +54,11 @@ function getInterval()
     return interval_;
 }
 
-
 function Interval(interval_) {    
     setInterval(function SendRequest() {
         $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
     }, interval_)
 }
-//function SendRequest() {
-//    $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
-//};
 
 function SendRequest_Success(result) {
     for (var i = (arr.length - 1) ;  ;) { 
