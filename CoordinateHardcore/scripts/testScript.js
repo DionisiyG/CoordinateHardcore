@@ -3,12 +3,16 @@
     max = 449;
     return +(Math.floor(Math.random() * (max - min)) + min);
 };
-var numberOfPoints = prompt("Enter the starting number of points", 3);
+//var numberOfPoints = prompt("Enter the starting number of points", 3);
 
 var x = 40;
 context.beginPath();
 var arr = [];
-
+function getPoint()
+{
+    var numberOfPoints = document.getElementById("countId").value;
+    return numberOfPoints;
+}
 function drawGraph(numberOfPoints) {
 
     for (var i = 0; i <= numberOfPoints; i++) {
@@ -17,9 +21,9 @@ function drawGraph(numberOfPoints) {
         arr[i] = { x, y };
         context.arc(x, y, 5, 0, Math.PI * 2);
     }
-    context.stroke();
+    context.stroke();   
 };
-drawGraph(numberOfPoints);
+drawGraph(getPoint());
 
 function reDraw() {
     context.clearRect(0, 0, 1200, 500);
@@ -43,10 +47,17 @@ function reWrite() {
     context.stroke();
 }
 
+//function getInterval()
+//{
+//    var interval_ = document.getElementById("delayId").value;
+//    interval_ = interval_ * 1000;
+//    return interval_;
+//}
+
 var interval = 500;
 setInterval(function SendRequest() {
     $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
-        }, interval)
+    }, interval)
 //function SendRequest() {
 //    $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
 //};
@@ -64,7 +75,7 @@ function SendRequest_Success(result) {
         }
     }
     context.stroke();
-    if (arr.length > 15) {
+    if (arr.length > 16) {
         reWrite();
     }
 }

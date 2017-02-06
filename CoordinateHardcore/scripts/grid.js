@@ -4,13 +4,13 @@ var context = c_canvas.getContext("2d");
 class Grid {
 
     drawGreyNet() {
-        for (var x = 0.5; x < 850; x += 10) {
+        for (var x = 0.5; x < 1070; x += 10) {
             context.moveTo(x, 0);
             context.lineTo(x, 500);
         }
         for (var y = 0.5; y < 500; y += 10) {
             context.moveTo(0, y);
-            context.lineTo(850, y);
+            context.lineTo(1070, y);
         }
         context.strokeStyle = "#eee";
         context.stroke();
@@ -22,7 +22,7 @@ class Grid {
         context.beginPath();
         //x
         context.moveTo(10, 450);
-        context.lineTo(850, 450);
+        context.lineTo(1070, 450);
         //y
         context.moveTo(70, 20);
         context.lineTo(70, 490);

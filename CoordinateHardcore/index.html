@@ -5,13 +5,19 @@
 </head>
 <body>
     <script src="http://kbyte.ru/content/scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <canvas height='500' width='850' id='chart'></canvas>
-    <script src="scripts/grid.js"></script>  
+    <canvas height='500' width='1070' id='chart'></canvas>
+    <script src="scripts/grid.js"></script>
     <script src="scripts/testScript.js"></script>
 
     <p>Enter the original number of points</p>
-    <textarea name="comment" cols="20" rows="1"></textarea><p>
-    <!--<p><input type="button" value="add" onclick="SendRequest()"></p>
-    <p><input type="button" value="rew" onclick="reWrite()"></p>-->
+         <input id="countId" name="countPoints" placeholder="Number of points" />
+         <input type="button" onclick="drawGraph(getPoint())">
+
+    <!--<p>Enter the delay</p>
+         <input id="delayId" name="delay" placeholder="Delay in seconds" />
+            <input type="button" onclick="SendRequest()">-->
+
+    <p><input type="button" value="add" onclick="SendRequest(); return false"></p>
+
 </body>
 </html>
