@@ -3,7 +3,6 @@
     max = 449;
     return +(Math.floor(Math.random() * (max - min)) + min);
 };
-//var numberOfPoints = prompt("Enter the starting number of points", 3);
 
 var x = 40;
 context.beginPath();
@@ -47,17 +46,19 @@ function reWrite() {
     context.stroke();
 }
 
-//function getInterval()
-//{
-//    var interval_ = document.getElementById("delayId").value;
-//    interval_ = interval_ * 1000;
-//    return interval_;
-//}
+function getInterval()
+{
+    var interval_ = document.getElementById("delayId").value;
+    interval_ = interval_ * 1000;
+    return interval_;
+}
 
-var interval = 500;
-setInterval(function SendRequest() {
-    $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
-    }, interval)
+
+function Interval(interval_) {    
+    setInterval(function SendRequest() {
+        $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
+    }, interval_)
+}
 //function SendRequest() {
 //    $.ajax("http://localhost:52138/api/values", { success: SendRequest_Success });
 //};
